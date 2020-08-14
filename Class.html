@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+	<html lang="ko">
+	<head>
+	<meta  charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>사이트의 제목넣기</title>
+	<meta name="robots" content="noindex, nofollow" />
+	<meta name="keywords" content="키워드넣기" />
+	<meta name="description" content="설명넣기"/>
+	<meta name="author" content="저자넣기"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<style>
+				
+				
+</style>
+
+
+
+
+
+	</head>
+
+<body>
+	<p>
+//class는 함수가 아닙니다.
+	</p>
+	
+	<p>
+	class Person {
+  console.log('hello');
+}
+//에러: Unexpected token 찾기 불가능
+	</p>
+	<p>
+	// 클래스는 객체가 아닙니다!
+class Person {
+  prop1: 1,
+  prop2: 2
+}
+// 에러: Unexpected token
+	</p>
+	
+	<p>
+	특징
+클래스는 함수로 호출될 수 없습니다.
+클래스 선언은 let과 const처럼 블록 스코프에 선언되며, 호이스팅(hoisting)이 일어나지 않습니다.
+클래스의 메소드 안에서 super 키워드를 사용할 수 있습니다.
+</p>
+	<script>
+					
+class Person   {
+  constructor({name, age}) {
+    this.name = name;
+    this.age = age;
+  }
+	
+	 introduce() {
+    return `안녕하세요, 제 이름은 ${this.name}입니다.`;
+  }
+}
+		
+		
+		const person = new Person({name: '정인호', age: 31});
+		
+		console.log(person.introduce())
+		
+		
+					
+	</script>
+
+</body>
+
+</html>

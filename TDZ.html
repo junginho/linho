@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+	<html lang="ko">
+	<head>
+	<meta  charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>사이트의 제목넣기</title>
+	<meta name="robots" content="noindex, nofollow" />
+	<meta name="keywords" content="키워드넣기" />
+	<meta name="description" content="설명넣기"/>
+	<meta name="author" content="저자넣기"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<style>
+				
+				
+</style>
+
+
+
+
+
+	</head>
+
+<body>
+
+<p>TDZ은 let, const, class 구문의 유효성을 관리한다. 자바스크립트에서 변수가 동작하는 방식은 중요하다.</p>
+<p>인스턴스를 생성한 다음 클래스를 선언 하면 ReferenceError 에러가 발생 line:45</p> 
+<p>ReferenceError란?: 객체는 존재하지 않는 변수를 참조했을 때 발생하는 에러</p>	
+<p>함수실행후 함수선언 에서는 에러 발생하지 않음 line:53</p>
+
+<dl>
+<dt>const 변수 선언</dt>
+<dd>변수를 선언하고 초기화하면 변수에 접근할 수 있다. 동작 line:61</dd>	
+<dd>선언 전에 변수에 접근해보도록 하겠다. 에러 line:66</dd>	
+	
+</dl>
+	
+	
+	
+	<p>let 변수 선언</p>
+	
+	
+	<script>
+	//인스턴스 생성후 클래스 선언	ReferenceError 에러
+/*new Car('red'); // Does it work?
+
+class Car {
+  constructor(color) {
+    this.color = color;
+  }
+}*/
+		//함수 실행후 함수 선언  에러 없음
+		greet(); // Does it work?
+
+function greet() {
+	 document.write( '<p>Hello 함수!</p>' );
+}
+					
+	//const 변수 선언
+		//변수를 먼저 선언
+		const white = '#FFFFFF';
+
+ console.log(white); // => '#FFFFFF'
+		
+		// 변수에 먼저 접근
+/*
+		white; //  ReferenceError
+ const white = '#FFFFFF'; 
+*/
+
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>사이트의 제목넣기</title>
+	<meta name="robots" content="noindex, nofollow" />
+	<meta name="keywords" content="키워드넣기" />
+	<meta name="description" content="설명넣기" />
+	<meta name="author" content="저자넣기" />
+
+	<style>
+
+
+	</style>
+
+
+
+
+
+</head>
+
+<body>
+
+	<p>scope란? 범위라는 뜻을 가졋는데 스크립트에선 ‘변수에 접근할 수 있는 범위’ 라고 할수 있다.</p>
+
+
+	<p>함수scope는 지역스코프 전역스코프로 나누어 진다.</p>
+	<p>블록(block)이란 중괄호로 둘러싸인 부분을 블록이라고 합니다. 함수를 선언할 때 중괄호로 함수 본문을 둘러싸게 되는데 이부분을 블록이라 한다. </p>
+	<p>기존 var의 경우 함수 스코프를 가졌기 때문에 함수 내에서만 지역변수가 유지되는 문제가 있었는데요. ES2015(ES6)에서 let / const 키워드가 추가되면서 함수가 아닌 일반 블록에서도 지역변수를 선언할 수 있게 되었습니다.</p>
+
+	<script>
+		// 함수 스코프
+
+		var a = 1; // 전역 스코프
+		function print() { // 지역(함수) 스코프
+			var a = 111;
+			console.log(a); //111
+		}
+		print();
+		console.log(a); //1
+
+
+		function text() { // 지역(함수) 스코프
+			console.log(a); //1 Scope Chain에 의해 일어나는 현상인데 현제 자신의 스코프 안에서 사용할 변수가 없다면 Scope Chain을 통해서 해당 변수를 찾아감.
+		}
+		text();
+		console.log(a); //1
+
+		//블록 스코프
+
+		{ // 블록
+			const a = '1';
+		}
+	</script>
+
+
+
+
+</body></html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>사이트의 제목넣기</title>
+	<meta name="robots" content="noindex, nofollow" />
+	<meta name="keywords" content="키워드넣기" />
+	<meta name="description" content="설명넣기" />
+	<meta name="author" content="저자넣기" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<style>
+
+
+	</style>
+
+
+
+	<script>
+		//var선언
+		//var선언의 단점은 같은 이름으로 반복이되도 에러가 뜨지 않는다.
+		//간단한 코딩에는 간편히 사용하겠지만 코드량이 많아진다면 겹치는 부분으로 에러가 발생할수 있다.
+		var name = 'bathingape'
+		console.log(name) // bathingape
+
+		var name = 'javascript'
+		console.log(name) // javascript
+
+
+		// let 선언
+		// 같은 이름은 재선언이 불가능 const도 같음
+
+
+		let king = 'bathingape'
+		console.log(king) // bathingape
+		// 재선언 불가
+		/*   let king = 'javascript'
+		   console.log(king) */
+		// Uncaught SyntaxError: Identifier 'name' has already been declared
+		//name이 이미 선언 되었다는 에러 메세지가 나온다. (const도 마찬가지)변수 재선언이 되지 않는다.
+
+
+
+		//const 와 let선언의 차이점
+
+		//let선언은 재선언은 불가하지만 재할당은 가능하다.
+		king = 'react'
+		console.log(king) //react
+
+
+		//const 선언
+		const id = 'bathingape'
+		console.log(id) // bathingape
+		//재선언 불가
+		/*    const id = 'javascript'
+		    console.log(id) */
+		// Uncaught SyntaxError: Identifier 'name' has already been declared
+		//재할당 불가
+		/*    id = 'react'
+		    console.log(id) */
+		//Uncaught TypeError: Assignment to constant variable.
+
+		
+		
+		//변수 선언에는 기본적으로 const를 사용하고, 재할당이 필요한 경우에 한정해 let 을 사용하는 것이 좋다.
+		
+
+
+
+	</script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

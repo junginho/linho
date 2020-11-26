@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+ <div id="app">
+    {{nextYear("하이")}}
+
+    <input v-bind:type="type" v-bind:value="inputData"/>
+
+    <!-- // v-bind 생략해서 사용가능 -->
+    <input type="text" :value="inputData"/>
+   
+    <a :href="link" >유투브</a>
+
+    <a :href="getNaver('kossiecoder')" >코지코더</a>
+    <br/><br/><br/><br/>
+ <button onclick="alert('밥먹자')">click</button>
+
+ <button v-on:click="alert">클릭</button>
+ <br/><br/><br/>
+
+{{year}}<br/>
+
+<button v-on:click="plus"> 더하기 Year</button>
+<button v-on:click="minus"> 빼기 Year</button>
+
+<br/><br/><br/>
+
+<!-- submit을 상용하면 페이지가 리로드 되면서 기록이 사라지는데 prevent를 붙여주면 기본 기능을 막아주어 기록이 남음 -->
+
+<form action="" v-on:submit.prevent="submit">
+ 
+    <input type="text" />
+    <button type="submit">submit</button>
+
+</form>
+
+ </div>
+   <script>
+       new Vue({
+           el:"#app",
+           data:{
+               person:{
+                name:"정인호",
+               age:31,
+               },
+            inputData:"hello",
+            type:'number',
+            link:'https://www.youtube.com/',
+            year:2020
+
+           },
+
+           methods:{
+            getNaver(channel){
+                return  this.link + channel
+            },
+              //nextYear: function(greeting) function 생략해서 사용가능  
+            nextYear(greeting){
+                return greeting +'!'+this.person.name +'는 내년에' + (this.person.age + 1) + '입니다.'
+            },
+            otherMethods: function(){
+                this.nextYear();
+            },
+            alert(){
+                alert('배고파')
+            },
+            plus(){
+                this.year++
+            },
+            minus(){
+                this.year--
+            },
+            submit(){
+                alert('submitted'),
+                console.log('하이')
+            }
+           }
+       })
+   </script>
+</body>
+</html>
